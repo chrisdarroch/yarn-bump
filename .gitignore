@@ -1,0 +1,13 @@
+/__tests__/fixtures/**/_*
+/coverage
+/dist
+/lib
+/node_modules
+*.log
+*.msi
+*.nupkg
+.idea
+.vscode
+.nyc_output
+.vs
+.yarn-meta

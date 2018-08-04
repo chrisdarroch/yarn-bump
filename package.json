@@ -1,0 +1,8 @@
+{
+  "name": "yarn-bump",
+  "version": "0.0.1",
+  "description": "Changes the version of a workspace package everywhere it is used.",
+  "main": "index.js",
+  "author": "Christopher Darroch <christopher.darroch@gmail.com>",
+  "license": "MIT"
+}
