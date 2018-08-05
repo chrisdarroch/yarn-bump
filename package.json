@@ -1,5 +1,5 @@
 {
-  "name": "yarn-bump",
+  "name": "yarn-version-bump",
   "version": "0.0.1",
   "description": "Helps change the version of a workspace package everywhere it is used.",
   "readme": "README.md",
