@@ -66,3 +66,7 @@ Options:
     * infer package name from current working directory.
     * remove `--dir` flag; infer root of workspace from cwd.
 * Only update exact version matches (leave semver alone).
+
+
+[Bolt]: https://github.com/boltpkg/bolt
+[Lerna]: https://github.com/lerna/lerna
