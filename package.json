@@ -5,6 +5,14 @@
   "readme": "README.md",
   "author": "Christopher Darroch <christopher.darroch@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "monorepo",
+    "multi-package",
+    "yarn"
+  ],
+  "repository": "github.com:chrisdarroch/yarn-bump",
+  "homepage": "https://github.com/chrisdarroch/yarn-bump#readme",
+  "bugs": "https://github.com/chrisdarroch/yarn-bump/issues",
   "bin": {
     "yarn-bump": "./bin/bump.js"
   },
