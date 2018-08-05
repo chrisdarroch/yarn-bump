@@ -14,4 +14,6 @@ const argv = require('yargs')
     .demandOption(['package', 'new-version', 'dir'])
     .argv;
 
-bumpVersion(argv.package, argv.newVersion, argv.dir);
+const result = bumpVersion(argv.package, argv.newVersion, argv.dir);
+
+result.then(data => console.log(data));

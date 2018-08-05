@@ -35,16 +35,17 @@ async function bumpVersion(depName, newVersion, dir) {
     });
 
     // Bump the dependent versions
+    const processing = [];
     for (secondName of dependents) {
         const secondPkg = workspaceStart.packageFilepath(secondName);
-        await processJsonFile(
+        processing.push(processJsonFile(
             secondPkg,
             json => replaceVersion(depName, newVersion, json)
-        );
+        ));
     }
 
-    const workspaceEnd = await workspace.workspaceData;
-    console.log(workspaceEnd);
+    await Promise.all(processing);
+    return await workspace.workspaceSnapshot;
 }
 
 exports.bumpVersion = bumpVersion;
