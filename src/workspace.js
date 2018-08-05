@@ -1,4 +1,5 @@
 const path = require('path');
+const WorkspaceSnapshot = require('./workspace-snapshot');
 const {runCommand} = require('./util/child');
 
 class Workspace {
@@ -6,17 +7,17 @@ class Workspace {
         this.dir = dir;
     }
 
-    get workspaceData() {
+    get workspaceSnapshot() {
         return runCommand('yarn',
             ['workspaces', 'info', '--silent'],
-            { cwd: this.dir }
-        ).then(data => JSON.parse(data));
+            { cwd: this.root }
+        )
+        .then(data => JSON.parse(data))
+        .then(json => new WorkspaceSnapshot(this, json));
     }
 
-    async packageFilepath(name) {
-        const workspace = await this.workspaceData;
-        const pkgLoc = workspace[name].location;
-        return path.resolve(this.dir, pkgLoc, 'package.json');
+    get root() {
+        return this.dir;
     }
 }
 
