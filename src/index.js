@@ -1,4 +1,5 @@
 const {processJsonFile} = require('./util/json');
+const logger = require('./util/logger');
 const Workspace = require('./workspace');
 
 const DEPENDENCY_TYPES = [
@@ -10,9 +11,10 @@ const DEPENDENCY_TYPES = [
 
 function replaceVersion(depName, newVersion, json) {
     for (type of DEPENDENCY_TYPES) {
-        if (!json[type] || !json[type][depName]) continue;
-        console.log('replacing', depName, json[type][depName]);
-        json[type][depName] = newVersion;
+        if (json[type] && json[type][depName]) {
+            logger.debug(`setting ${depName} to ${newVersion} in ${json.name}'s ${type}`);
+            json[type][depName] = newVersion;
+        }
     }
     return json;
 }

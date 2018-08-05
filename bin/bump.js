@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const {bumpVersion} = require('../src/index');
+const {info} = require('../src/util/logger');
 
 const argv = require('yargs')
     .version(false)
@@ -16,4 +17,4 @@ const argv = require('yargs')
 
 const result = bumpVersion(argv.package, argv.newVersion, argv.dir);
 
-result.then(data => console.log(data));
+result.then(data => info(data));
