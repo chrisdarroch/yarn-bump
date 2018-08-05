@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const {bumpVersion} = require('../src/index');
+const {bumpVersion} = require('../src/bump-version');
 const {info} = require('../src/util/logger');
 
 const argv = require('yargs')

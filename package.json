@@ -5,7 +5,7 @@
   "author": "Christopher Darroch <christopher.darroch@gmail.com>",
   "license": "MIT",
   "bin": {
-    "bump": "./bin/bump.js"
+    "yarn-bump": "./bin/bump.js"
   },
   "peerDependencies": {
     "yarn": ">=1"
