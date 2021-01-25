@@ -9,7 +9,7 @@ class Workspace {
 
     get workspaceSnapshot() {
         return runCommand('yarn',
-            ['workspaces', 'info', '--silent'],
+            ['--silent', 'workspaces', 'info'],
             { cwd: this.root }
         )
         .then(data => JSON.parse(data))
